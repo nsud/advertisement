@@ -1,3 +1,5 @@
 flask
 eve
 pymemcache
+requests
+redis
