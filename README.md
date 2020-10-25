@@ -21,7 +21,7 @@ requests.get(f'http://{YOUR_WEB_IP}/message/{id_message}')
 
 # добавление нового объявления
 data = {'text': {'title': 'name', 'message': 'mess', 'tags': ['tag1'], 'comments': ['comment1']}}
-requests.post(f'http://{YOUR_WEB_IP}/message', params=data) 
+requests.post(f'http://{YOUR_WEB_IP}/message', json=data) 
 
 # добавление нового комментария
 requests.post(f'http://{YOUR_WEB_IP}/comment/{id_message}', params={'text': 'comm222'})
