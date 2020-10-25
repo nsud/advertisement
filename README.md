@@ -21,13 +21,13 @@ requests.get(f'http://{YOUR_WEB_IP}/message/{id_message}')
 
 # добавление нового объявления
 data = {'text': {'title': 'name', 'message': 'mess', 'tags': ['tag1'], 'comments': ['comment1']}}
-requests.post('http://{YOUR_WEB_IP}/message', params=data) 
+requests.post(f'http://{YOUR_WEB_IP}/message', params=data) 
 
 # добавление нового комментария
-requests.post('http://{YOUR_WEB_IP}/comment/{id_message}', params={'text': 'comm222'})
+requests.post(f'http://{YOUR_WEB_IP}/comment/{id_message}', params={'text': 'comm222'})
 
 # добавление нового тега
-requests.post('http://{YOUR_WEB_IP}/tag/{id_message}', params={'text': 'tag222'})
+requests.post(f'http://{YOUR_WEB_IP}/tag/{id_message}', params={'text': 'tag222'})
 
 # просмотр статистики по объявлению
 requests.get(f'http://{YOUR_WEB_IP}/stats/{id_message}') 
