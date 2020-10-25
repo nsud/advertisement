@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  db:
+    restart: always
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  redis:
+    restart: always
+    image: redis
+    ports:
+      - "6379:6379"
+
+  web:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - /opt/qeue/:/opt/env/
+    ports:
+      - "8000:5005"
+
