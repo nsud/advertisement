@@ -9,9 +9,8 @@ COPY requirements.txt ./
 RUN pip3 install -r requirements.txt
 
 COPY code/*.py ./
-RUN cd /opt/env/ && export $(grep -v '^#' .env | xargs)
 
 RUN useradd app
 RUN chown app:app -R ../code
 
-CMD python3 app.py && python3 app_flask.py
+CMD python3 app_flask.py
