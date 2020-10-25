@@ -1,10 +1,7 @@
-import ast
 import requests
 from redis import Redis
-from flask import Flask, request, jsonify
-from pymemcache.client.base import Client
+from flask import Flask, request
 import os, json
-import sys
 
 
 app = Flask(__name__)
