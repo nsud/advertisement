@@ -1,5 +1,5 @@
 version: "3"
-
+  
 services:
   db:
     restart: always
@@ -13,13 +13,20 @@ services:
     ports:
       - "6379:6379"
 
+  api:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile_api
+    ports:
+      - "5005:5005"
+
   web:
     restart: always
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-    - /opt/qeue/env:/opt/env/
+    env_file:
+      - ./env/.env
     ports:
-      - "8000:5005"
-
+      - "5007:5007"
